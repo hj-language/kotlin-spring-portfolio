@@ -2,8 +2,14 @@ package com.hyejin.portfolio.domain.repository
 
 import com.hyejin.portfolio.domain.entity.Project
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Query
+import java.util.*
 
 interface ProjectRepository : JpaRepository<Project, Long> {
-    // 1:N 관계여서 성능이 좋지 않음 - 추후 개선
+
+    @Query("select p from Project p left join fetch p.skills s left join fetch s.skill where p.isActive = :isActive")
     fun findAllByIsActive(isActive: Boolean): List<Project>
+
+    @Query("select p from Project p left join fetch p.details where p.id = :id")
+    override fun findById(id: Long): Optional<Project>
 }
