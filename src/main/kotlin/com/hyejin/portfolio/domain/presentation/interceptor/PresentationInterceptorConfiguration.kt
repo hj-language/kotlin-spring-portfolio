@@ -1,0 +1,6 @@
+package com.hyejin.portfolio.domain.presentation.interceptor
+
+import org.springframework.context.annotation.Configuration
+
+@Configuration
+class PresentationInterceptorConfiguration
