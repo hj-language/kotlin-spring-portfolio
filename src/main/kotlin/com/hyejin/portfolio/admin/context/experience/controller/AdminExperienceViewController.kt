@@ -35,7 +35,7 @@ class AdminExperienceViewController(
         val table = adminExperienceService.getExperienceTable()
         model.addAttribute("table", table)
 
-        val detailTable = adminExperienceService.getExperienceTable(null)
+        val detailTable = adminExperienceService.getExperienceDetailTable(null)
         model.addAttribute("detailTable", detailTable)
 
         val pageAttributes = mutableMapOf<String, Any>(

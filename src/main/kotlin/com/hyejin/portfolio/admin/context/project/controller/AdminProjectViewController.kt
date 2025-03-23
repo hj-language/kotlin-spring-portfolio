@@ -37,7 +37,7 @@ class AdminProjectViewController(
         val table = adminProjectService.getProjectTable()
         model.addAttribute("table", table)
 
-        val detailTable = adminProjectService.getProjectTable(null)
+        val detailTable = adminProjectService.getProjectDetailTable(null)
         model.addAttribute("detailTable", detailTable)
 
         val pageAttributes = mutableMapOf<String, Any>(
